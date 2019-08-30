@@ -1,9 +1,8 @@
 /**
  * 
  */
-package com.huaban.analysis.jieba;
+package com.cnlp.analysis.jieba;
 
-import java.io.File;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Paths;
 import java.util.List;
@@ -13,7 +12,7 @@ import junit.framework.TestCase;
 
 import org.junit.Test;
 
-import com.huaban.analysis.jieba.JiebaSegmenter.SegMode;
+import com.cnlp.analysis.jieba.JiebaSegmenter.SegMode;
 
 
 /**
