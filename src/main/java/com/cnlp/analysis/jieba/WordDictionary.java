@@ -68,7 +68,6 @@ public class WordDictionary {
                 }
                 loadedPath.add(abspath);
             } catch (IOException e) {
-                // TODO Auto-generated catch block
                 // e.printStackTrace();
                 System.err.println(String.format(Locale.getDefault(), "%s: load user dict failure!", configFile.toString()));
             }
@@ -84,7 +83,6 @@ public class WordDictionary {
                         singleton.loadUserDict(path);
                         loadedPath.add(path);
                     } catch (Exception e) {
-                        // TODO Auto-generated catch block
                         e.printStackTrace();
                         System.err.println(String.format(Locale.getDefault(), "%s: load user dict failure!", path));
                     }
