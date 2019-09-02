@@ -2,11 +2,9 @@ package com.cnlp.analysis.jieba;
 
 import java.util.regex.Pattern;
 
-
 public class CharacterUtil {
     public static Pattern reSkip = Pattern.compile("(\\d+\\.\\d+|[a-zA-Z0-9]+)");
     private static final char[] connectors = new char[] { '+', '#', '&', '.', '_', '-' };
-
 
     public static boolean isChineseLetter(char ch) {
         if (ch >= 0x4E00 && ch <= 0x9FA5)
@@ -14,20 +12,17 @@ public class CharacterUtil {
         return false;
     }
 
-
     public static boolean isEnglishLetter(char ch) {
         if ((ch >= 0x0041 && ch <= 0x005A) || (ch >= 0x0061 && ch <= 0x007A))
             return true;
         return false;
     }
 
-
     public static boolean isDigit(char ch) {
         if (ch >= 0x0030 && ch <= 0x0039)
             return true;
         return false;
     }
-
 
     public static boolean isConnector(char ch) {
         for (char connector : connectors)
@@ -36,7 +31,14 @@ public class CharacterUtil {
         return false;
     }
 
-
+    /**
+     * 判断字符是否是有效的字符
+     * 
+     * 有效：中文、英文、数字、连接符
+     * 
+     * @param ch 要判断的字符
+     * @return True表示字符有效，否则无效
+     */
     public static boolean ccFind(char ch) {
         if (isChineseLetter(ch))
             return true;
@@ -49,22 +51,18 @@ public class CharacterUtil {
         return false;
     }
 
-
     /**
      * 全角 to 半角,大写 to 小写
      * 
-     * @param input
-     *            输入字符
+     * @param input 输入字符
      * @return 转换后的字符
      */
     public static char regularize(char input) {
         if (input == 12288) {
             return 32;
-        }
-        else if (input > 65280 && input < 65375) {
+        } else if (input > 65280 && input < 65375) {
             return (char) (input - 65248);
-        }
-        else if (input >= 'A' && input <= 'Z') {
+        } else if (input >= 'A' && input <= 'Z') {
             return (input += 32);
         }
         return input;

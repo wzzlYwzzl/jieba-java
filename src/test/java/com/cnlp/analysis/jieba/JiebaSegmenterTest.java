@@ -21,6 +21,7 @@ import com.cnlp.analysis.jieba.JiebaSegmenter.SegMode;
  */
 public class JiebaSegmenterTest extends TestCase {
     private JiebaSegmenter segmenter = new JiebaSegmenter();
+    
     String[] sentences =
             new String[] {
                           "找小姐",
@@ -140,7 +141,7 @@ public class JiebaSegmenterTest extends TestCase {
     @Test
     public void testCutForIndex() {
         for (String sentence : sentences) {
-            List<SegToken> tokens = segmenter.process(sentence, SegMode.INDEX);
+            List<SegToken> tokens = segmenter.process(sentence, SegMode.INDEX_ALL);
             System.out.print(String.format(Locale.getDefault(), "\n%s\n%s", sentence, tokens.toString()));
         }
     }

@@ -109,6 +109,7 @@ public class WordDictionary {
             long s = System.currentTimeMillis();
             while (br.ready()) {
                 String line = br.readLine();
+                //分隔符可以是空格，也可以是tab
                 String[] tokens = line.split("[\t ]+");
 
                 if (tokens.length < 2)
