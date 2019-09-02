@@ -6,28 +6,27 @@
 
 不过由于huaban已经没有再对java版进行维护，所以我自己对项目进行了开发。除了结巴分词(java版)所保留的原项目针对搜索引擎分词的功能(cut~forindex~、cut~forsearch~)，我加入了tfidf的关键词提取功能，并且实现的效果和python的jieba版本的效果一模一样！
 
-
 （以下内容在基于[jieba-java版本README.md](https://github.com/huaban/jieba-analysis])的基础上，加入了对我新加入的tfidf关键词提取模块的相关说明)
 ***
 
 简介
+
 ====
 
 支持分词模式
 ------------
 
--   Search模式，用于对用户查询词分词
--   Index模式，用于对索引文档分词
+- Search模式，用于对用户查询词分词
+- Index模式，用于对索引文档分词
 
 特性
 ----
 
--   支持多种分词模式
--   全角统一转成半角
--   用户词典功能
--   conf 目录有整理的搜狗细胞词库
--   因为性能原因，最新的快照版本去除词性标注，也希望有更好的 Pull
-    Request 可以提供该功能。
+- 支持多种分词模式
+- 全角统一转成半角
+- 用户词典功能
+- conf 目录有整理的搜狗细胞词库
+- 因为性能原因，最新的快照版本去除词性标注，也希望有更好的 Pull Request 可以提供该功能。
 
 **新特性：tfidf算法提取关键词**
 
@@ -68,9 +67,10 @@
     ``` -->
 
 如何使用
+
 ========
 
--   Demo
+- Demo
 
 ``` {.java}
 
@@ -87,17 +87,19 @@ public void testDemo() {
 ```
 
 算法(wiki补充...)
+
 =================
 
--   \[ \] 基于 `trie` 树结构实现高效词图扫描
--   \[ \] 生成所有切词可能的有向无环图 `DAG`
--   \[ \] 采用动态规划算法计算最佳切词组合
--   \[ \] 基于 `HMM` 模型，采用 `Viterbi` (维特比)算法实现未登录词识别
+- \[ \] 基于 `trie` 树结构实现高效词图扫描
+- \[ \] 生成所有切词可能的有向无环图 `DAG`
+- \[ \] 采用动态规划算法计算最佳切词组合
+- \[ \] 基于 `HMM` 模型，采用 `Viterbi` (维特比)算法实现未登录词识别
 
 性能评估
+
 ========
 
--   测试机配置
+- 测试机配置
 
 ``` {.screen}
 Processor 2 Intel(R) Pentium(R) CPU G620 @ 2.60GHz
@@ -107,8 +109,8 @@ Memory：8GB
 会影响到测试速度
 ```
 
--   *测试文本*
--   测试结果(单线程，对测试文本逐行分词，并循环调用上万次)
+- *测试文本*
+- 测试结果(单线程，对测试文本逐行分词，并循环调用上万次)
 
     ``` {.screen}
     循环调用一万次
@@ -136,11 +138,13 @@ Memory：8GB
     ```
 
 使用本库项目
+
 ============
 
--   [analyzer-solr](https://github.com/sing1ee/analyzer-solr) @sing1ee
+- [analyzer-solr](https://github.com/sing1ee/analyzer-solr) @sing1ee
 
 许可证
+
 ======
 
 jieba(python版本)的许可证为MIT，jieba(java版本)的许可证为ApacheLicence
